@@ -405,7 +405,7 @@ def main():
 	ip = ""
 	port = ""
 	print("> Mode: [cc/post/slow/check]")
-	mode = str(input("> Choose Your Mode (default=cc) :"))
+	mode = str(input("> Choose Your Mode (default=cc):"))
 	if mode == "":
 		mode = "cc"
 	ip = str(input("> Host/Ip:"))
@@ -420,7 +420,7 @@ def main():
 			url2 = "/"
 		else:
 			url2 = url
-	port = str(input("> Port(Https is 443):"))
+	port = str(input("> Port(Https is 443)(default=80):"))
 	if port == '':
 		port = int(80)
 		print("> Default choose port 80\r\n> Port 80 was chosen")
@@ -440,8 +440,8 @@ def main():
 		else:
 			socks_type = 5
 	if mode == "check":
-		N = str(input("> Do you need to get socks list?(y/n,default=y):"))
-		if N == 'y' or N == "" :
+		N = str(input("> Do you need to get socks list?(y/n,default=n):"))
+		if N == 'y' :
 			if choice == "4":
 				f = open("socks4.txt",'wb')
 				try:
@@ -490,9 +490,9 @@ def main():
 			proxies = open(out_file).readlines()
 		print ("> Number Of Socks%s Proxies: %s" %(choice,len(proxies)))
 		time.sleep(0.03)
-		ans = str(input("> Do u need to check the socks list?(y/n, defualt=y):"))
+		ans = str(input("> Do u need to check the socks list?(y/n, default=n):"))
 		if ans == "":
-			ans = "y"
+			ans = "n"
 		if ans == "y":
 			ms = str(input("> Delay of socks(seconds, default=1):"))
 			if ms == "":
@@ -506,18 +506,18 @@ def main():
 		print("> End of process")
 		return
 	if mode == "slow":	
-		thread_num = str(input("> Connections(default=400):"))
+		thread_num = str(input("> Connections(default=800):"))
 	else:
-		thread_num = str(input("> Threads(default=400):"))
+		thread_num = str(input("> Threads(default=800):"))
 	if thread_num == "":
-		thread_num = int(400)
+		thread_num = int(800)
 	else:
 		try:
 			thread_num = int(thread_num)
 		except:
 			sys.exit("Error thread number")
-	N = str(input("> Do you need to get socks list?(y/n,default=y):"))
-	if N == 'y' or N == "" :
+	N = str(input("> Do you need to get socks list?(y/n,default=n):"))
+	if N == 'y' :
 		if choice == "4":
 			f = open("socks4.txt",'wb')
 			try:
@@ -566,9 +566,9 @@ def main():
 		proxies = open(out_file).readlines()
 	print ("> Number Of Socks%s Proxies: %s" %(choice,len(proxies)))
 	time.sleep(0.03)
-	ans = str(input("> Do u need to check the socks list?(y/n, defualt=y):"))
+	ans = str(input("> Do u need to check the socks list?(y/n, defualt=n):"))
 	if ans == "":
-		ans = "y"
+		ans = "n"
 	if ans == "y":
 		ms = str(input("> Delay of socks(seconds, default=1):"))
 		if ms == "":
@@ -585,9 +585,9 @@ def main():
 		th.setDaemon(True)
 		th.start()
 	else:
-		multiple = str(input("> Input the Magnification(default=100):"))
+		multiple = str(input("> Input the Magnification(default=200):"))
 		if multiple == "":
-			multiple = int(100)
+			multiple = int(200)
 		else:
 			multiple = int(multiple)
 		input("Press Enter to continue.")
