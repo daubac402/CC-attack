@@ -549,7 +549,7 @@ def main():
 			proxies = open(out_file).readlines()
 		print ("> Number Of Socks%s Proxies: %s" %(choice,len(proxies)))
 		time.sleep(0.03)
-		ans = str(input("> Do u need to check the socks list?(y/n, default=n):"))
+		ans = str(input("> Do u need to check the socks list?(y/n, default=y):"))
 		if ans == "":
 			ans = "y"
 		if ans == "y":
@@ -645,7 +645,7 @@ def main():
 		proxies = open(out_file).readlines()
 	print ("> Number Of Socks%s Proxies: %s" %(choice,len(proxies)))
 	time.sleep(0.03)
-	ans = str(input("> Do u need to check the socks list?(y/n, defualt=n):"))
+	ans = str(input("> Do u need to check the socks list?(y/n, default=y):"))
 	if ans == "":
 		ans = "y"
 	if ans == "y":
