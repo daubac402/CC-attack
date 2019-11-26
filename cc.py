@@ -468,8 +468,8 @@ def main():
 		else:
 			socks_type = 5
 	if mode == "check":
-		N = str(input("> Do you need to get socks list?(y/n,default=n):"))
-		if N == 'y' :
+		N = str(input("> Do you need to get socks list?(y/n,default=y):"))
+		if N == 'y' or N == "" :
 			if choice == "4":
 				f = open("socks4.txt",'wb')
 				try:
@@ -520,7 +520,7 @@ def main():
 		time.sleep(0.03)
 		ans = str(input("> Do u need to check the socks list?(y/n, default=n):"))
 		if ans == "":
-			ans = "n"
+			ans = "y"
 		if ans == "y":
 			ms = str(input("> Delay of socks(seconds, default=1):"))
 			if ms == "":
@@ -544,8 +544,8 @@ def main():
 			thread_num = int(thread_num)
 		except:
 			sys.exit("Error thread number")
-	N = str(input("> Do you need to get socks list?(y/n,default=n):"))
-	if N == 'y' :
+	N = str(input("> Do you need to get socks list?(y/n,default=y):"))
+	if N == 'y' or N == "" :
 		if choice == "4":
 			f = open("socks4.txt",'wb')
 			try:
@@ -596,7 +596,7 @@ def main():
 	time.sleep(0.03)
 	ans = str(input("> Do u need to check the socks list?(y/n, defualt=n):"))
 	if ans == "":
-		ans = "n"
+		ans = "y"
 	if ans == "y":
 		ms = str(input("> Delay of socks(seconds, default=1):"))
 		if ms == "":
